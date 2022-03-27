@@ -7,11 +7,6 @@ public class MenuManager {
 		int num = 0;
 		Scanner input = new Scanner(System.in);
 		
-		String account = "";
-		int total = 0;
-		int income = 0;
-		int expense = 0;
-		
 		while (num != 6) {
 				
 			System.out.println("1. create new account");
@@ -24,31 +19,21 @@ public class MenuManager {
 			num = input.nextInt();
 			
 			if (num == 1) 
-			{
-				System.out.print("New account number is : ");
-				account = input.next();
-			}
+				CreateAccount();
 			
-			if (num == 2) 
+			else if (num == 2) 
 			{
-				System.out.println("My account number is "+ account);
-				System.out.printf("Total Money : ",total);
-				System.out.print("Input the total money >>" );
-				total = input.nextInt();
+				TotalMoney();
 			}
 			
 			else if (num == 3)
 			{
-				System.out.printf("Income : %d\n",income);
-				System.out.print("Input the income >>" );
-				income = input.nextInt();
+				Income();
 			}
 			
 			else if (num == 4)
 			{
-				System.out.printf("expense : %d\n",expense);
-				System.out.print("Input the expense >>" );
-				expense = input.nextInt();
+				Expense();
 			}
 			
 			else if (num == 5)
@@ -58,6 +43,35 @@ public class MenuManager {
 		
 		}
 
+	}
+	public static void CreateAccount() {
+		Scanner input1 = new Scanner(System.in);
+		System.out.print("New account number is : ");
+		String account = input1.nextLine();
+	}
+	
+	public static void TotalMoney() {
+		int total = 0;
+		Scanner input2 = new Scanner(System.in);
+		System.out.print("Input the total money >> " );
+		System.out.printf("Total Money : ",total);
+		total = input2.nextInt();
+	}
+	
+	public static void Income() {
+		int income = 0;
+		Scanner input3 = new Scanner(System.in);
+		System.out.print("Input the income >> " );
+		System.out.printf("Income : ");
+		income = input3.nextInt();
+	}
+	
+	public static void Expense() {
+		int expense = 0;
+		Scanner input4 = new Scanner(System.in);
+		System.out.print("Input the expense >> " );
+		System.out.printf("expense : ");
+		expense = input4.nextInt();
 	}
 
 }
