@@ -1,6 +1,9 @@
 import java.util.*;
 
 import Account.Account;
+import Account.JBbankAccounts;
+import Account.JHbankAccounts;
+import Account.MSbankAccounts;
 
 public class AccountManager {
 	ArrayList<Account> accounts = new ArrayList<Account>();
@@ -11,11 +14,44 @@ public class AccountManager {
 	}
 	
 	public void CreateAccount() {
-		System.out.print("Account number : ");
-		int accountnum  = input.nextInt();
-		Account account = new Account(accountnum);
-		accounts.add(account);
-		System.out.println();
+		int kind = 0;
+		Account account;
+		while (kind != 1 && kind != 2 && kind != 3 && kind != 4) {
+			System.out.println("1. for IHbank");
+			System.out.println("2. for JHbank");
+			System.out.println("3. for JBbank");
+			System.out.println("4. for MSbank");
+			System.out.println("Select num for Account Kind between 1 and 4 : ");
+			kind = input.nextInt();
+			if(kind == 1) {
+				account = new Account();
+				account.getUserInput(input);
+				accounts.add(account);
+				break;
+			}
+			else if (kind == 2) {
+				account = new JHbankAccounts();
+				account.getUserInput(input);
+				accounts.add(account);
+				break;
+			}
+			else if (kind == 3) {
+				account = new JBbankAccounts();
+				account.getUserInput(input);
+				accounts.add(account);
+				break;
+			}
+			else if (kind == 4) {
+				account = new MSbankAccounts();
+				account.getUserInput(input);
+				accounts.add(account);
+				break;
+			}
+			else {
+				System.out.println("Select num for Account Kind between 1 and 4 : ");
+			}
+		}
+		
 	}
 	
 	public void DeleteAccount() {
@@ -40,11 +76,121 @@ public class AccountManager {
 	}
 	
 	public void IncomeAndExpense() {
-		System.out.printf("Income : ");
-		int income = input.nextInt();
-		
-		System.out.printf("expense : ");
-		int expense = input.nextInt();
+		int num = 0;
+		Account income;
+		Account expense;
+		while (num != 1 && num != 2 && num != 3 && num != 4) {
+			System.out.println("1. For IHbank Accounts");
+			System.out.println("2. For JHbank Accounts");
+			System.out.println("3. For JBbank Accounts");
+			System.out.println("4. For MSbank Accounts");
+			System.out.println("Select num for Account Kind between 1 and 4 : ");
+			num = input.nextInt();
+			
+			if(num == 1) {
+				System.out.print("Account Number : ");
+				int accountnum = input.nextInt();
+				int index = -1;
+				for(int i = 0 ; i < accounts.size() ; i++) {
+					if (accounts.get(i).getAccountnum() == accountnum) {
+						index = i;
+						break;
+					}
+				}
+				
+				if (index >= 0) {
+					income = new Account();
+					expense = new Account();
+					income.getUserIncome(input);
+					accounts.add(income);
+					expense.getUserExpense(input);
+					accounts.add(expense);
+				}
+				
+				else {
+					System.out.println("Account has not been registered");
+					return;
+				}	
+			}
+			else if (num == 2) {
+				System.out.print("Account Number : ");
+				int accountnum = input.nextInt();
+				int index = -1;
+				for(int i = 0 ; i < accounts.size() ; i++) {
+					if (accounts.get(i).getAccountnum() == accountnum) {
+						index = i;
+						break;
+					}
+				}
+				
+				if (index >= 0) {
+					income = new Account();
+					expense = new Account();
+					income.getUserIncome(input);
+					accounts.add(income);
+					expense.getUserExpense(input);
+					accounts.add(expense);
+				}
+				
+				else {
+					System.out.println("Account has not been registered");
+					return;
+				}	
+			}
+			else if (num == 3) {
+				System.out.print("Account Number : ");
+				int accountnum = input.nextInt();
+				int index = -1;
+				for(int i = 0 ; i < accounts.size() ; i++) {
+					if (accounts.get(i).getAccountnum() == accountnum) {
+						index = i;
+						break;
+					}
+				}
+				
+				if (index >= 0) {
+					income = new Account();
+					expense = new Account();
+					income.getUserIncome(input);
+					accounts.add(income);
+					expense.getUserExpense(input);
+					accounts.add(expense);
+				}
+				
+				else {
+					System.out.println("Account has not been registered");
+					return;
+				}	
+			}
+			else if (num == 4) {
+				System.out.print("Account Number : ");
+				int accountnum = input.nextInt();
+				int index = -1;
+				for(int i = 0 ; i < accounts.size() ; i++) {
+					if (accounts.get(i).getAccountnum() == accountnum) {
+						index = i;
+						break;
+					}
+				}
+				
+				if (index >= 0) {
+					income = new Account();
+					expense = new Account();
+					income.getUserIncome(input);
+					accounts.add(income);
+					expense.getUserExpense(input);
+					accounts.add(expense);
+				}
+				
+				else {
+					System.out.println("Account has not been registered");
+					return;
+				}	
+			}
+			else {
+				System.out.println("Select num for Account Kind between 1 and 4 : ");
+			}
+		}
 	}
 	
 	public void EditAccount() {
@@ -91,8 +237,7 @@ public class AccountManager {
 	}
 	
 	public void ViewAccounts() {
-//		System.out.print("Account number : ");
-//		int accountnum = input.nextInt();
+
 		for(int i = 0 ; i < accounts.size() ; i++) {
 			accounts.get(i).printInfo();
 		}
