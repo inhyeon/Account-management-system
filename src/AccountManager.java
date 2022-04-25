@@ -77,8 +77,6 @@ public class AccountManager {
 	
 	public void IncomeAndExpense() {
 		int num = 0;
-		Account income;
-		Account expense;
 		while (num != 1 && num != 2 && num != 3 && num != 4) {
 			System.out.println("1. For IHbank Accounts");
 			System.out.println("2. For JHbank Accounts");
@@ -98,13 +96,15 @@ public class AccountManager {
 					}
 				}
 				
+				Account tempAcc = accounts.get(index);
+				
 				if (index >= 0) {
-					income = new Account();
-					expense = new Account();
-					income.getUserIncome(input);
-					accounts.add(income);
-					expense.getUserExpense(input);
-					accounts.add(expense);
+					System.out.println("Income : ");
+					int incomeMoney = input.nextInt();
+					tempAcc.setIncome(incomeMoney);
+					System.out.println("Expense : ");
+					int expenseMoney = input.nextInt();
+					tempAcc.setExpense(expenseMoney);
 				}
 				
 				else {
@@ -122,14 +122,15 @@ public class AccountManager {
 						break;
 					}
 				}
+				Account tempAcc = accounts.get(index);
 				
 				if (index >= 0) {
-					income = new Account();
-					expense = new Account();
-					income.getUserIncome(input);
-					accounts.add(income);
-					expense.getUserExpense(input);
-					accounts.add(expense);
+					System.out.println("Income : ");
+					int incomeMoney = input.nextInt();
+					tempAcc.setIncome(incomeMoney);
+					System.out.println("Expense : ");
+					int expenseMoney = input.nextInt();
+					tempAcc.setExpense(expenseMoney);
 				}
 				
 				else {
@@ -147,14 +148,15 @@ public class AccountManager {
 						break;
 					}
 				}
+				Account tempAcc = accounts.get(index);
 				
 				if (index >= 0) {
-					income = new Account();
-					expense = new Account();
-					income.getUserIncome(input);
-					accounts.add(income);
-					expense.getUserExpense(input);
-					accounts.add(expense);
+					System.out.println("Income : ");
+					int incomeMoney = input.nextInt();
+					tempAcc.setIncome(incomeMoney);
+					System.out.println("Expense : ");
+					int expenseMoney = input.nextInt();
+					tempAcc.setExpense(expenseMoney);
 				}
 				
 				else {
@@ -172,14 +174,15 @@ public class AccountManager {
 						break;
 					}
 				}
+				Account tempAcc = accounts.get(index);
 				
 				if (index >= 0) {
-					income = new Account();
-					expense = new Account();
-					income.getUserIncome(input);
-					accounts.add(income);
-					expense.getUserExpense(input);
-					accounts.add(expense);
+					System.out.println("Income : ");
+					int incomeMoney = input.nextInt();
+					tempAcc.setIncome(incomeMoney);
+					System.out.println("Expense : ");
+					int expenseMoney = input.nextInt();
+					tempAcc.setExpense(expenseMoney);
 				}
 				
 				else {

@@ -6,3 +6,4 @@ public enum AccountKind {
 	JBbank,
 	MSbank,
 }
+ 

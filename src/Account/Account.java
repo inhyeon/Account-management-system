@@ -8,6 +8,15 @@ public class Account {
 	protected int income;
 	protected int expense;
 	
+	public Account(int accountnum, AccountKind kind) {
+		this.accountnum = accountnum;
+		this.kind = kind;
+	}
+	
+	
+	public Account() {
+	}
+
 	public AccountKind getKind() {
 		return kind;
 	}
@@ -30,7 +39,7 @@ public class Account {
 
 	public void setIncome(int income) {
 		this.income = income;
-	}
+	} 
 
 	public int getExpense() {
 		return expense;
@@ -40,14 +49,6 @@ public class Account {
 		this.expense = expense;
 	}
 
-	public Account() {		
-	}
-	
-	public Account(int accountnum) {
-		this.accountnum = accountnum;
-		this.income = income;
-		this.expense = expense;
-	}
 	
 	public void printInfo() {
 		System.out.println("Account Number : " + accountnum + " Income : " + income + " Expense : " + expense);

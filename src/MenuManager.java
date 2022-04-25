@@ -4,7 +4,7 @@ public class MenuManager {
 
 	public static void main(String[] args) {
 		
-		int num = 0;
+		int num = 0; 
 		Scanner input = new Scanner(System.in);
 		AccountManager accountManager = new AccountManager(input);
 		

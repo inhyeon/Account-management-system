@@ -8,5 +8,5 @@ public class JBbankAccounts extends Account {
 		System.out.print("Account number : ");
 		int accountnum  = input.nextInt();
 		this.setAccountnum(accountnum);
-	}
+	} 
 }
