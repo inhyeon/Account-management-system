@@ -55,7 +55,7 @@ public class Account {
 	}
 	
 	public void getUserInput(Scanner input) {
-		System.out.print("Account number : ");
+		System.out.print("IHbank Account number : ");
 		int accountnum  = input.nextInt();
 		this.setAccountnum(accountnum);
 	}

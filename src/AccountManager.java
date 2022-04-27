@@ -50,7 +50,7 @@ public class AccountManager {
 			else {
 				System.out.println("Select num for Account Kind between 1 and 4 : ");
 			}
-		}
+		} 
 		
 	}
 	
