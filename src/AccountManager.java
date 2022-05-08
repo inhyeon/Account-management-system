@@ -1,6 +1,8 @@
 import java.util.*;
 
 import Account.Account;
+import Account.BankEvent;
+import Account.IHbankAccounts;
 import Account.JBbankAccounts;
 import Account.JHbankAccounts;
 import Account.MSbankAccounts;
@@ -24,7 +26,7 @@ public class AccountManager {
 			System.out.println("Select num for Account Kind between 1 and 4 : ");
 			kind = input.nextInt();
 			if(kind == 1) {
-				account = new Account();
+				account = new IHbankAccounts();
 				account.getUserInput(input);
 				accounts.add(account);
 				break;
@@ -240,9 +242,45 @@ public class AccountManager {
 	}
 	
 	public void ViewAccounts() {
-
 		for(int i = 0 ; i < accounts.size() ; i++) {
 			accounts.get(i).printInfo();
+		}
+	}
+	
+	public void bankEvents() {
+		int num = 0;
+		Scanner input = new Scanner(System.in);
+		
+		while(num != 5) {
+			System.out.println("1. IHbank Events");
+			System.out.println("2. JBbank Events");
+			System.out.println("3. JHbank Events");
+			System.out.println("4. MSbank Events");
+			num = input.nextInt();
+			
+			if(num == 1) {
+				BankEvent be = new IHbankAccounts();
+				be.bankEvent();
+				System.out.println("");
+			}
+			else if(num == 2) {
+				BankEvent be = new JBbankAccounts();
+				be.bankEvent();
+				System.out.println("");
+			}
+			else if(num == 3) {
+				BankEvent be = new JHbankAccounts();
+				be.bankEvent();
+				System.out.println("");
+			}
+			else if(num == 4){
+				BankEvent be = new MSbankAccounts();
+				be.bankEvent();
+				System.out.println("");
+			}
+			else {
+				continue;
+			}
 		}
 	}
 

@@ -2,10 +2,10 @@ package Account;
 
 import java.util.Scanner;
 
-public class JBbankAccounts extends Account implements BankEvent{
+public class IHbankAccounts extends Account implements BankEvent{
 	
 	public void getUserInput(Scanner input) {
-		System.out.print("JBbank Account number : ");
+		System.out.print("IHbank Account number : ");
 		int accountnum  = input.nextInt();
 		this.setAccountnum(accountnum);
 	} 
@@ -15,7 +15,7 @@ public class JBbankAccounts extends Account implements BankEvent{
 	}
 	
 	public void bankEvent() {
-		System.out.println("JBbank의 이벤트");
-		System.out.println("JB 청년 희망 적금 - 금리 5.5%");
+		System.out.println("IHbank의 이벤트");
+		System.out.println("IH 특별 적금 - 금리 4.5%");
 	}
 }

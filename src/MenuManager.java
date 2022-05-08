@@ -8,15 +8,16 @@ public class MenuManager {
 		Scanner input = new Scanner(System.in);
 		AccountManager accountManager = new AccountManager(input);
 		
-		while (num != 6) {
+		while (num != 7) {
 				
 			System.out.println("1. create new account");
 			System.out.println("2. delete my account");
 			System.out.println("3. income & output");
 			System.out.println("4. edit account info");
 			System.out.println("5. view acoount");
-			System.out.println("6. exit");
-			System.out.println("Select one number between 1 - 6 : ");
+			System.out.println("6. bank events");
+			System.out.println("7. exit");
+			System.out.println("Select one number between 1 - 7 : ");
 			num = input.nextInt();
 			
 			if (num == 1) 
@@ -33,6 +34,9 @@ public class MenuManager {
 			
 			else if (num == 5)
 				accountManager.ViewAccounts();
+			
+			else if (num == 6)
+				accountManager.bankEvents();
 			
 			else
 				continue;

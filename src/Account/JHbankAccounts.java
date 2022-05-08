@@ -2,7 +2,7 @@ package Account;
 
 import java.util.Scanner;
 
-public class JHbankAccounts extends Account {
+public class JHbankAccounts extends Account implements BankEvent{
 	
 	public void getUserInput(Scanner input) {
 		
@@ -10,4 +10,13 @@ public class JHbankAccounts extends Account {
 		int accountnum  = input.nextInt();
 		this.setAccountnum(accountnum);
 	} 
+	
+	public void printInfo() {
+		System.out.println("Account Number : " + accountnum + " Income : " + income + " Expense : " + expense);
+	}
+	
+	public void bankEvent() {
+		System.out.println("JHbank의 이벤트");
+		System.out.println("JH 장기 적금 - 금리 5.5%");
+	}
 }
