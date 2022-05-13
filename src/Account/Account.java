@@ -46,5 +46,5 @@ public abstract class Account {
 		int accountnum  = input.nextInt();
 		this.setAccountnum(accountnum);
 	}
-	
+	 
 }

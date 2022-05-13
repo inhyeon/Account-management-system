@@ -20,3 +20,4 @@ public class JHbankAccounts extends Account implements BankEvent{
 		System.out.println("JH 장기 적금 - 금리 5.5%");
 	}
 }
+ 

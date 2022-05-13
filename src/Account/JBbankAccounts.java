@@ -12,7 +12,7 @@ public class JBbankAccounts extends Account implements BankEvent{
 	
 	public void printInfo() {
 		System.out.println("Account Number : " + accountnum + " Income : " + income + " Expense : " + expense);
-	}
+	} 
 	
 	public void bankEvent() {
 		System.out.println("JBbank의 이벤트");
