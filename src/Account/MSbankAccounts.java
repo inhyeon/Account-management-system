@@ -23,6 +23,6 @@ public class MSbankAccounts extends Account implements BankEvent, Serializable{
 	public void bankEvent() {
 		System.out.println("MSbank의 이벤트");
 		System.out.println("MS 은행 적금 - 금리 4.5%");
-	} 
+	}  
 }
  

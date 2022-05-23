@@ -2,7 +2,7 @@ package Account;
 
 public enum AccountKind { 
 	IHbank,
-	JHbank,
+	JHbank, 
 	JBbank,
 	MSbank, 
 }

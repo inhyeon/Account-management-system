@@ -23,5 +23,5 @@ public class JBbankAccounts extends Account implements BankEvent, Serializable{
 	public void bankEvent() {
 		System.out.println("JBbank의 이벤트");
 		System.out.println("JB 청년 희망 적금 - 금리 5.5%");
-	}
+	} 
 }

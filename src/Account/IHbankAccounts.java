@@ -24,4 +24,4 @@ public class IHbankAccounts extends Account implements BankEvent, Serializable{
 		System.out.println("IHbank의 이벤트");
 		System.out.println("IH 특별 적금 - 금리 4.5%");
 	}
-} 
+}  

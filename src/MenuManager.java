@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.*;
-
 import log.EventLogger;
  
 public class MenuManager {
@@ -16,7 +15,7 @@ public class MenuManager {
 		Scanner input = new Scanner(System.in);
 		AccountManager accountManager = getObject("accountmanager.ser");
 		if(accountManager == null) {
-			accountManager = new AccountManager(input);
+			accountManager = new AccountManager();
 		}
 		selectMenu(input, accountManager);
 		putObject(accountManager, "accountmanager.ser");
@@ -31,19 +30,19 @@ public class MenuManager {
 				
 				switch(num) {
 				case 1:
-					accountManager.CreateAccount();
+					accountManager.CreateAccount(input);
 					logger.log("create an account");
 					break;
 				case 2:
-					accountManager.DeleteAccount();
+					accountManager.DeleteAccount(input);
 					logger.log("delete an account");
 					break;
 				case 3:
-					accountManager.IncomeAndExpense();
+					accountManager.IncomeAndExpense(input);
 					logger.log("input income and expense");
 					break;
 				case 4:
-					accountManager.EditAccount();
+					accountManager.EditAccount(input);
 					logger.log("edit accounts info");
 					break;
 				case 5:

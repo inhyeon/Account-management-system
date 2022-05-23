@@ -15,13 +15,11 @@ public class AccountManager implements Serializable{
 	private static final long serialVersionUID = -2506940107936720890L;
 	
 	ArrayList<Account> accounts = new ArrayList<Account>();
-	transient Scanner input;
 	
-	AccountManager(Scanner input){
-		this.input = input;
+	public AccountManager() {
 	}
-	
-	public void CreateAccount() {
+
+	public void CreateAccount(Scanner input) {
 		int kind = 0;
 		Account account;
 		while (kind != 1 && kind != 2 && kind != 3 && kind != 4) {
@@ -76,7 +74,7 @@ public class AccountManager implements Serializable{
 	}
 	
 	
-	public void DeleteAccount() {
+	public void DeleteAccount(Scanner input) {
 		System.out.print("Account Number : ");
 		int accountnum = input.nextInt();
 		int index = findIndex(accountnum);
@@ -106,7 +104,7 @@ public class AccountManager implements Serializable{
 		}	
 	}
 	
-	public void IncomeAndExpense() {
+	public void IncomeAndExpense(Scanner input) {
 		int num = 0;
 		while (!(num >= 1 && num<= 4)) {
 			try {
@@ -114,7 +112,7 @@ public class AccountManager implements Serializable{
 				num = input.nextInt();
 			
 				if(num >= 1 && num <= 4)
-					printIncomeAndExpense();	
+					printIncomeAndExpense(input);	
 				else 
 					System.out.println("Select num for Account Kind between 1 and 4 : ");
 			}
@@ -136,19 +134,19 @@ public class AccountManager implements Serializable{
 		System.out.println("Select num for Account Kind between 1 and 4 : ");
 	}
 	
-	public void printIncomeAndExpense() {
+	public void printIncomeAndExpense(Scanner input) {
 		System.out.print("Account Number : ");
 		int accountnum = input.nextInt();
 		int index = findIndex(accountnum);
 		if (index >= 0) {
-			setIncomeAndExpense(index);
+			setIncomeAndExpense(input,index);
 		}
 		
 		else {
 			System.out.println("Account has not been registered");
 		}	
 	}
-	public void setIncomeAndExpense(int index) {
+	public void setIncomeAndExpense(Scanner input, int index) {
 		Account tempAcc = accounts.get(index);
 		System.out.println("Income : ");
 		int incomeMoney = input.nextInt();
@@ -158,7 +156,7 @@ public class AccountManager implements Serializable{
 		tempAcc.setExpense(expenseMoney);
 	}
 	
-	public void EditAccount() {
+	public void EditAccount(Scanner input) {
 		System.out.print("Account number : ");
 		int accountnum = input.nextInt();
 		for(int i = 0 ; i < accounts.size() ; i++) {
