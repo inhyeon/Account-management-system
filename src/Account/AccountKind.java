@@ -1,6 +1,6 @@
 package Account;
 
-public enum AccountKind {
+public enum AccountKind { 
 	IHbank,
 	JHbank,
 	JBbank,

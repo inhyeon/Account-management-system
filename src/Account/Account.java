@@ -12,7 +12,7 @@ public abstract class Account {
 		this.accountnum = accountnum;
 	}
 	
-	public Account() {
+	public Account() { 
 	}
 
 	public int getAccountnum() {

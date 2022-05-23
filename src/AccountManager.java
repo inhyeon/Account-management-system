@@ -1,3 +1,4 @@
+import java.io.Serializable;
 import java.util.*;
 
 import Account.Account;
@@ -7,9 +8,14 @@ import Account.JBbankAccounts;
 import Account.JHbankAccounts;
 import Account.MSbankAccounts;
 
-public class AccountManager {
+public class AccountManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2506940107936720890L;
+	
 	ArrayList<Account> accounts = new ArrayList<Account>();
-	Scanner input;
+	transient Scanner input;
 	
 	AccountManager(Scanner input){
 		this.input = input;
@@ -232,7 +238,7 @@ public class AccountManager {
 				System.out.println("4. MSbank Events");
 				System.out.println("5. Exit Menu");
 				num = input.nextInt();
-			
+			 
 				if(num == 1) {
 					BankEvent be = new IHbankAccounts();
 					be.bankEvent();

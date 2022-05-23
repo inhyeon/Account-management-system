@@ -1,9 +1,15 @@
 package Account;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class JHbankAccounts extends Account implements BankEvent{
+public class JHbankAccounts extends Account implements BankEvent, Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7043199056387505849L;
+
 	public void getUserInput(Scanner input) {
 		
 		System.out.print("JHbank Account number : ");
