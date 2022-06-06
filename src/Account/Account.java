@@ -1,9 +1,15 @@
 package Account;
 
+import java.io.Serializable;
 import java.util.Scanner; 
 
-public abstract class Account {
+public abstract class Account implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4668407136583905226L;
+	
 	protected int accountnum;
 	protected int income;
 	protected int expense;

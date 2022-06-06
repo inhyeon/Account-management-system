@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Scanner;
 
 public class MSbankAccounts extends Account implements BankEvent, Serializable{
-
+ 
 	/**
 	 * 
 	 */
