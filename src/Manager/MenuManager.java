@@ -18,7 +18,7 @@ public class MenuManager {
 		Scanner input = new Scanner(System.in);
 		AccountManager accountManager = getObject("accountmanager.ser");
 		if(accountManager == null) {
-			accountManager = new AccountManager();
+			accountManager = AccountManager.getInstance();
 		}
 		WindowFrame frame = new WindowFrame(accountManager);
 		

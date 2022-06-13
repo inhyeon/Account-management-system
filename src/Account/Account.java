@@ -4,10 +4,6 @@ import java.io.Serializable;
 import java.util.Scanner; 
 
 public abstract class Account implements Serializable{
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4668407136583905226L;
 	
 	protected int accountnum;
@@ -24,7 +20,8 @@ public abstract class Account implements Serializable{
 	public int getAccountnum() {
 		return accountnum;
 	}
-
+	
+	
 	public void setAccountnum(int accountnum) {
 		this.accountnum = accountnum;
 	}
@@ -51,6 +48,5 @@ public abstract class Account implements Serializable{
 		System.out.print("Account number : ");
 		int accountnum  = input.nextInt();
 		this.setAccountnum(accountnum);
-	}
-	 
+	} 
 }

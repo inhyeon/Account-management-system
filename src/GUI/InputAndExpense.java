@@ -1,11 +1,15 @@
 package GUI;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
+
+import listener.ButtonCancel;
 
 public class InputAndExpense extends JPanel{
 	
@@ -28,9 +32,10 @@ public class InputAndExpense extends JPanel{
 		labelExpense.setLabelFor(fieldExpense);
 		panel.add(labelExpense);
 		panel.add(fieldExpense);
-		
+		JButton cancel = new JButton("cancel");
+		cancel.addMouseListener(new ButtonCancel(frame));
 		panel.add(new JButton("save"));
-		panel.add(new JButton("cancel"));
+		panel.add(cancel);
 		
 		SpringUtilities.makeCompactGrid(panel, 3, 2, 6, 6, 6, 6);
 		

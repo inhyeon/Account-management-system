@@ -17,7 +17,7 @@ public class WindowFrame extends JFrame{
 	public WindowFrame(AccountManager accountmanager) {
 		this.accountmanager = accountmanager;
 		this.menuselection = new MenuSelection(this);
-		this.accountinfo = new AccountInfo(this);
+		this.accountinfo = new AccountInfo(this, this.accountmanager);
 		this.accountviewer = new AccountViewer(this, this.accountmanager);
 		this.inputandexpense = new InputAndExpense(this);
 		
@@ -57,6 +57,7 @@ public class WindowFrame extends JFrame{
 	}
 
 	public void setAccountviewer(AccountViewer accountviewer) {
+		accountviewer.freshTable();
 		this.accountviewer = accountviewer;
 	}
 	public InputAndExpense getInputandexpense() {

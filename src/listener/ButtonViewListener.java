@@ -14,6 +14,7 @@ public class ButtonViewListener implements ActionListener {
 	
 	public ButtonViewListener(WindowFrame frame) {
 		this.frame = frame;
+		
 	}
 
 	@Override

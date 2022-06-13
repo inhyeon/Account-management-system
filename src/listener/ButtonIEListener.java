@@ -22,6 +22,5 @@ public class ButtonIEListener implements ActionListener {
 		JButton b = (JButton) e.getSource();
 		InputAndExpense inputandexpense = frame.getInputandexpense();
 		frame.setupPanel(inputandexpense);
- 
 	}
 }

@@ -1,12 +1,15 @@
 package GUI;
 
 import java.awt.BorderLayout;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import listener.ButtonAddListener;
+import listener.ButtonExit;
 import listener.ButtonIEListener;
 import listener.ButtonViewListener;
 
@@ -16,7 +19,6 @@ public class MenuSelection extends JPanel{
 	
 	public MenuSelection(WindowFrame frame) {
 		this.frame = frame;
-		
 		this.setLayout(new BorderLayout());
 		
 		JPanel panel1 = new JPanel();
@@ -43,6 +45,7 @@ public class MenuSelection extends JPanel{
 		panel2.add(button5);
 		panel2.add(button6);
 		panel2.add(button7);
+		button7.addMouseListener(new ButtonExit(frame));
 		
 		this.add(panel1,BorderLayout.NORTH);
 		this.add(panel2, BorderLayout.CENTER);

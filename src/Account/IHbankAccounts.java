@@ -16,6 +16,12 @@ public class IHbankAccounts extends Account implements BankEvent, Serializable{
 		this.setAccountnum(accountnum);
 	} 
 	
+	public void getUserInput(int accountNum, int income, int expense) {
+		this.setAccountnum(accountNum);
+		this.setExpense(expense);
+		this.setIncome(income);
+	}
+	
 	public void printInfo() {
 		System.out.println("Account Number : " + accountnum + " Income : " + income + " Expense : " + expense);
 	}

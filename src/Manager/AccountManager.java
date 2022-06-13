@@ -10,14 +10,14 @@ import Account.JHbankAccounts;
 import Account.MSbankAccounts;
 
 public class AccountManager implements Serializable{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2506940107936720890L;
-	
+	private static AccountManager am = new AccountManager();
+	static public AccountManager getInstance() {
+		return am;
+	}
 	ArrayList<Account> accounts = new ArrayList<Account>();
 	
-	public AccountManager() {
+	private AccountManager() {
 	}
 
 	public void CreateAccount(Scanner input) {
@@ -281,5 +281,12 @@ public class AccountManager implements Serializable{
 				num = -1;
 			}
 		}
+	}
+	public ArrayList<Account> getList(){
+		return this.accounts;
+	}
+	public void addToList(Account account) {
+
+		accounts.add(account);
 	}
 }
